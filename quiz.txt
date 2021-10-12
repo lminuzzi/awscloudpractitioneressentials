@@ -2,6 +2,42 @@ AWS Cloud Practitioner Essentials
 https://www.aws.training/Details/eLearning?id=60697
 
 MODULE 1
+Summarize the benefits of AWS.
+Describe differences between on-demand delivery and cloud deployments.
+Summarize the pay-as-you-go pricing model.
+
+=> Cloud-Based Deployment
+Run all parts of the application in the cloud.
+Migrate existing applications to the cloud.
+Design and build new applications in the cloud.
+
+In a cloud-based deployment model, you can migrate existing applications to the cloud, or you can design and build new applications in the cloud.
+You can build those applications on low-level infrastructure that requires your IT staff to manage them.
+Alternatively, you can build them using higher-level services that reduce the management, architecting, and scaling requirements of the core infrastructure.
+For example, a company might create an application consisting of virtual servers, databases, and networking components that are fully based in the cloud.
+
+
+=> On-Premises Deployment
+Deploy resources by using virtualization and resource management tools.
+Increase resource utilization by using application management and virtualization technologies.
+
+On-premises deployment is also known as a private cloud deployment. In this model, resources are deployed on premises by using virtualization and resource management tools.
+For example, you might have applications that run on technology that is fully kept in your on-premises data center.
+Though this model is much like legacy IT infrastructure, its incorporation of application management and virtualization technologies helps to increase resource utilization.
+
+
+=> Hybrid Deployment
+Connect cloud-based resources to on-premises infrastructure.
+Integrate cloud-based resources with legacy IT applications.
+
+In a hybrid deployment, cloud-based resources are connected to on-premises infrastructure. You might want to use this approach in a number of situations.
+For example, you have legacy applications that are better maintained on premises, or government regulations require your business to keep certain records on premises.
+For example, suppose that a company wants to use cloud services that can automate batch data processing and analytics. 
+However, the company has several legacy applications that are more suitable on premises and will not be migrated to the cloud.
+With a hybrid deployment, the company would be able to keep the legacy applications on premises while benefiting from the data and analytics services that run in the cloud.
+
+
+=> QUIZ
 
 1 - What is cloud computing?
 
@@ -15,13 +51,14 @@ d) On-demand delivery of IT resources and applications through the internet with
 
 The correct response option is On-demand delivery of IT resources and applications through the internet with pay-as-you-go pricing.
 
- 
+
 
 The other response options are incorrect because:
 
 It is possible to back up files to the cloud, but this response option does not describe cloud computing as a whole.
 Deploying applications connected to on-premises infrastructure is a sample use case for a hybrid cloud deployment. Remember that cloud computing also has cloud and on-premises (or private cloud) deployment models.
-AWS Lambda is an AWS service that lets you run code without needing to manage or provision servers. This description does not describe cloud computing as a whole. AWS Lambda is explained in greater detail later in the course.
+AWS Lambda is an AWS service that lets you run code without needing to manage or provision servers.
+This description does not describe cloud computing as a whole. AWS Lambda is explained in greater detail later in the course.
 
 
 2 - What is another name for on-premises deployment?
@@ -36,12 +73,13 @@ d) AWS Cloud
 
 The correct response option is Private cloud deployment.
 
- 
+
 
 The other response options are incorrect because:
 
 Cloud-based applications are fully deployed in the cloud and do not have any parts that run on premises.
-A hybrid deployment connects infrastructure and applications between cloud-based resources and existing resources that are not in the cloud, such as on-premises resources. However, a hybrid deployment is not equivalent to an on-premises deployment because it involves resources that are located in the cloud.
+A hybrid deployment connects infrastructure and applications between cloud-based resources and existing resources that are not in the cloud, such as on-premises resources.
+However, a hybrid deployment is not equivalent to an on-premises deployment because it involves resources that are located in the cloud.
 The AWS Cloud offers three cloud deployment models: cloud, hybrid, and on-premises. This response option is incorrect because the AWS Cloud is not equivalent to only an on-premises deployment.
 
 
@@ -57,11 +95,9 @@ d) You can quickly deploy applications to customers and provide them with low la
 
 The correct response option is The aggregated cloud usage from a large number of customers results in lower pay-as-you-go prices.
 
- 
+
 
 This answer describes how customers can benefit from massive economies of scale in cloud computing.
-
- 
 
 The other response options are incorrect because:
 
@@ -69,3 +105,576 @@ Not having to invest in technology resources before using them relates to Trade 
 Accessing services on-demand to prevent excess or limited capacity relates to Stop guessing capacity.
 Quickly deploying applications to customers and providing them with low latency relates to Go global in minutes.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MODULE 2
+Describe the benefits of Amazon EC2 at a basic level.
+Identify the different Amazon EC2 instance types.
+Differentiate between the various billing options for Amazon EC2.
+Summarize the benefits of Amazon EC2 Auto Scaling.
+Summarize the benefits of Elastic Load Balancing.
+Give an example of the uses for Elastic Load Balancing.
+Summarize the differences between Amazon Simple Notification Service (Amazon SNS) and Amazon Simple Queue Service (Amazon SQS).
+Summarize additional AWS compute options.
+
+
+=> Amazon Elastic Compute Cloud (Amazon EC2) provides secure, resizable compute capacity in the cloud as Amazon EC2 instances. 
+Launch
+First, you launch an instance. Begin by selecting a template with basic configurations for your instance. These configurations include the operating system, application server, or applications.
+You also select the instance type, which is the specific hardware configuration of your instance.
+As you are preparing to launch an instance, you specify security settings to control the network traffic that can flow into and out of your instance. Later in this course, we will explore Amazon EC2 security features in greater detail.
+
+Connect
+Next, connect to the instance. You can connect to the instance in several ways. Your programs and applications have multiple different methods to connect directly to the instance and exchange data.
+Users can also connect to the instance by logging in and accessing the computer desktop.
+
+Use
+After you have connected to the instance, you can begin using it. You can run commands to install software, add storage, copy and organize files, and more.
+
+
+=> Amazon EC2 instance types are optimized for different tasks. When selecting an instance type, consider the specific needs of your workloads and applications. This might include requirements for compute, memory, or storage capabilities.
+
+- General Purpose Instances provide a good balance of compute, memory, and networking resources, and can be used for a variety of diverse workloads like web service or code repositories.
+Suppose that you have an application in which the resource needs for compute, memory, and networking are roughly equivalent.
+You might consider running it on a general purpose instance because the application does not require optimization in any single resource area.
+Balances compute, memory, and networking resources
+- Compute Optimized Instances are ideal for compute-intensive tasks like gaming servers, high performance computing or HPC, and even scientific modeling.
+You can also use compute optimized instances for batch processing workloads that require processing many transactions in a single group.
+Offers high-performance processors
+- Memory Optimized Instances are good for memory-intensive tasks. 
+It holds all the data and instructions that a central processing unit (CPU) needs to be able to complete actions. Before a computer program or application is able to run, it is loaded from storage into memory.
+This preloading process gives the CPU direct access to the computer program.
+Suppose that you have a workload that requires large amounts of data to be preloaded before running an application.
+This scenario might be a high-performance database or a workload that involves performing real-time processing of a large amount of unstructured data.
+In these types of use cases, consider using a memory optimized instance. Memory optimized instances enable you to run workloads with high memory needs and receive great performance.
+Ideal for high-performance databases
+- Accelerated Computing Instances are good for floating point number calculations, graphics processing, or data pattern matching, as they use hardware accelerators.
+In computing, a hardware accelerator is a component that can expedite data processing. Accelerated computing instances are ideal for workloads such as graphics applications, game streaming, and application streaming.
+- Storage Optimized Instances are good for workloads that require high performance for locally stored data.
+In computing, the term input/output operations per second (IOPS) is a metric that measures the performance of a storage device.
+It indicates how many different input or output operations a device can perform in one second. Storage optimized instances are designed to deliver tens of thousands of low-latency, random IOPS to applications. 
+You can think of input operations as data put into a system, such as records entered into a database. An output operation is data generated by a server. 
+An example of output might be the analytics performed on the records in a database.
+If you have an application that has a high IOPS requirement, a storage optimized instance can provide better performance over other instance types not optimized for this kind of use case.
+Suitable for data warehousing applications
+
+
+=> Amazon EC2 pricing
+- On-Demand
+On-Demand Instances are ideal for short-term, irregular workloads that cannot be interrupted. No upfront costs or minimum contracts apply.
+The instances run continuously until you stop them, and you pay for only the compute time you use.
+Sample use cases for On-Demand Instances include developing and testing applications and running applications that have unpredictable usage patterns.
+On-Demand Instances are not recommended for workloads that last a year or longer because these workloads can experience greater cost savings using Reserved Instances.
+
+- Amazon EC2 Savings Plans
+AWS offers Savings Plans for several compute services, including Amazon EC2. Amazon EC2 Savings Plans enable you to reduce your compute costs by committing to a consistent amount of compute usage for a 1-year or 3-year term.
+This term commitment results in savings of up to 66% over On-Demand costs.
+Any usage up to the commitment is charged at the discounted plan rate (for example, $10 an hour). Any usage beyond the commitment is charged at regular On-Demand rates.
+Later in this course, you will review AWS Cost Explorer, a tool that enables you to visualize, understand, and manage your AWS costs and usage over time.
+If you are considering your options for Savings Plans, AWS Cost Explorer can analyze your Amazon EC2 usage over the past 7, 30, or 60 days.
+AWS Cost Explorer also provides customized recommendations for Savings Plans.
+These recommendations estimate how much you could save on your monthly Amazon EC2 costs, based on previous Amazon EC2 usage and the hourly commitment amount in a 1-year or 3-year plan.
+
+- Reserved Instances
+Reserved Instances are a billing discount applied to the use of On-Demand Instances in your account.
+You can purchase Standard Reserved and Convertible Reserved Instances for a 1-year or 3-year term, and Scheduled Reserved Instances for a 1-year term. You realize greater cost savings with the 3-year option.
+At the end of a Reserved Instance term, you can continue using the Amazon EC2 instance without interruption. However, you are charged On-Demand rates until you do one of the following:
+Terminate the instance.
+Purchase a new Reserved Instance that matches the instance attributes (instance type, Region, tenancy, and platform).
+
+- Spot Instances
+Spot Instances are ideal for workloads with flexible start and end times, or that can withstand interruptions.
+Spot Instances use unused Amazon EC2 computing capacity and offer you cost savings at up to 90% off of On-Demand prices.
+Suppose that you have a background processing job that can start and stop as needed (such as the data processing job for a customer survey).
+You want to start and stop the processing job without affecting the overall operations of your business. 
+If you make a Spot request and Amazon EC2 capacity is available, your Spot Instance launches.
+However, if you make a Spot request and Amazon EC2 capacity is unavailable, the request is not successful until capacity becomes available. The unavailable capacity might delay the launch of your background processing job.
+After you have launched a Spot Instance, if capacity is no longer available or demand for Spot Instances increases, your instance may be interrupted. This might not pose any issues for your background processing job.
+    However, in the earlier example of developing and testing applications, you would most likely want to avoid unexpected interruptions. Therefore, choose a different EC2 instance type that is ideal for those tasks.
+
+- Dedicated Hosts
+Dedicated Hosts are physical servers with Amazon EC2 instance capacity that is fully dedicated to your use. 
+You can use your existing per-socket, per-core, or per-VM software licenses to help maintain license compliance.
+You can purchase On-Demand Dedicated Hosts and Dedicated Hosts Reservations. Of all the Amazon EC2 options that were covered, Dedicated Hosts are the most expensive.
+
+
+=> Amazon EC2 Auto Scaling
+Amazon EC2 Auto Scaling enables you to automatically add or remove Amazon EC2 instances in response to changing application demand.
+By automatically scaling your instances in and out as needed, you are able to maintain a greater sense of application availability.
+Within Amazon EC2 Auto Scaling, you can use two approaches: dynamic scaling and predictive scaling.
+Dynamic scaling responds to changing demand. 
+Predictive scaling automatically schedules the right number of Amazon EC2 instances based on predicted demand.
+To scale faster, you can use dynamic scaling and predictive scaling together.
+- Example: Amazon EC2 Auto Scaling
+By adding Amazon EC2 Auto Scaling to an application, you can add new instances to the application when necessary and terminate them when no longer needed.
+Suppose that you are preparing to launch an application on Amazon EC2 instances. When configuring the size of your Auto Scaling group, you might set the minimum number of Amazon EC2 instances at one.
+This means that at all times, there must be at least one Amazon EC2 instance running.
+- Minimum Capacity is the number of Amazon EC2 instances that launch immediately after you have created the Auto Scaling group. In this example, the Auto Scaling group has a minimum capacity of one Amazon EC2 instance.
+- Desired Capacity. If you do not specify the desired number of Amazon EC2 instances in an Auto Scaling group, the desired capacity defaults to your minimum capacity.
+- Maximum Capacity.
+Because Amazon EC2 Auto Scaling uses Amazon EC2 instances, you pay for only the instances you use, when you use them.
+
+
+=> Elastic Load Balancing
+Elastic Load Balancing is the AWS service that automatically distributes incoming application traffic across multiple resources, such as Amazon EC2 instances. 
+A load balancer acts as a single point of contact for all incoming web traffic to your Auto Scaling group. 
+This means that as you add or remove Amazon EC2 instances in response to the amount of incoming traffic, these requests route to the load balancer first. Then, the requests spread across multiple resources that will handle them.
+For example, if you have multiple Amazon EC2 instances, Elastic Load Balancing distributes the workload across the multiple instances so that no single instance has to carry the bulk of it. 
+Although Elastic Load Balancing and Amazon EC2 Auto Scaling are separate services, they work together to help ensure that applications running in Amazon EC2 can provide high performance and availability. 
+- Low-demand period
+Here’s an example of how Elastic Load Balancing works. Suppose that a few customers have come to the coffee shop and are ready to place their orders. 
+If only a few registers are open, this matches the demand of customers who need service. The coffee shop is less likely to have open registers with no customers. In this example, you can think of the registers as Amazon EC2 instances.
+- High-demand period
+Throughout the day, as the number of customers increases, the coffee shop opens more registers to accommodate them. In the diagram, the Auto Scaling group represents this.
+Additionally, a coffee shop employee directs customers to the most appropriate register so that the number of requests can evenly distribute across the open registers. You can think of this coffee shop employee as a load balancer. 
+
+
+=> Messaging and Queuing
+- Amazon Simple Notification Service (Amazon SNS) is a publish/subscribe service. Using Amazon SNS topics, a publisher publishes messages to subscribers.
+This is similar to the coffee shop; the cashier provides coffee orders to the barista who makes the drinks.
+In Amazon SNS, subscribers can be web servers, email addresses, AWS Lambda functions, or several other options. 
+- Publishing updates from a single topic: Suppose that the coffee shop has a single newsletter that includes updates from all areas of its business. It includes topics such as coupons, coffee trivia, and new products.
+All of these topics are grouped because this is a single newsletter. All customers who subscribe to the newsletter receive updates about coupons, coffee trivia, and new products.
+After a while, some customers express that they would prefer to receive separate newsletters for only the specific topics that interest them. The coffee shop owners decide to try this approach.
+- Publishing updates from multiple topics: Now, instead of having a single newsletter for all topics, the coffee shop has broken it up into three separate newsletters.
+Each newsletter is devoted to a specific topic: coupons, coffee trivia, and new products.
+Subscribers will now receive updates immediately for only the specific topics to which they have subscribed.
+It is possible for subscribers to subscribe to a single topic or to multiple topics. For example, the first customer subscribes to only the coupons topic, and the second subscriber subscribes to only the coffee trivia topic.
+The third customer subscribes to both the coffee trivia and new products topics.
+
+- Amazon Simple Queue Service (Amazon SQS) is a message queuing service. 
+Using Amazon SQS, you can send, store, and receive messages between software components, without losing messages or requiring other services to be available.
+In Amazon SQS, an application sends messages into a queue. A user or service retrieves a message from the queue, processes it, and then deletes it from the queue.
+
+
+=> Additional AWS Compute Options
+- Serverless computing
+The term “serverless” means that your code runs on servers, but you do not need to provision or manage these servers. With serverless computing, you can focus more on innovating new products and features instead of maintaining servers.
+Another benefit of serverless computing is the flexibility to scale serverless applications automatically. Serverless computing can adjust the applications' capacity by modifying the units of consumptions, such as throughput and memory. 
+An AWS service for serverless computing is AWS Lambda.
+
+- AWS Lambda
+AWS Lambda is a service that lets you run code without needing to provision or manage servers. 
+While using AWS Lambda, you pay only for the compute time that you consume. Charges apply only when your code is running. You can also run code for virtually any type of application or backend service, all with zero administration. 
+For example, a simple Lambda function might involve automatically resizing uploaded images to the AWS Cloud. In this case, the function triggers when uploading a new image.
+
+- Amazon Elastic Container Service (Amazon ECS)
+Amazon Elastic Container Service (Amazon ECS) is a highly scalable, high-performance container management system that enables you to run and scale containerized applications on AWS. 
+Amazon ECS supports Docker containers. Docker is a software platform that enables you to build, test, and deploy applications quickly.
+AWS supports the use of open-source Docker Community Edition and subscription-based Docker Enterprise Edition. 
+With Amazon ECS, you can use API calls to launch and stop Docker-enabled applications.
+
+- Amazon Elastic Kubernetes Service (Amazon EKS)
+Amazon Elastic Kubernetes Service (Amazon EKS) is a fully managed service that you can use to run Kubernetes on AWS. 
+Kubernetes is open-source software that enables you to deploy and manage containerized applications at scale. 
+A large community of volunteers maintains Kubernetes, and AWS actively works together with the Kubernetes community. 
+As new features and functionalities release for Kubernetes applications, you can easily apply these updates to your applications managed by Amazon EKS.
+
+- AWS Fargate
+AWS Fargate is a serverless compute engine for containers. It works with both Amazon ECS and Amazon EKS.
+When using AWS Fargate, you do not need to provision or manage servers. AWS Fargate manages your server infrastructure for you.
+You can focus more on innovating and developing your applications, and you pay only for the resources that are required to run your containers.
+
+
+=> ADDITIONAL RESOURCES
+
+Compute on AWS - https://aws.amazon.com/products/compute
+AWS Compute Blog - https://aws.amazon.com/blogs/compute/
+AWS Compute Services - https://docs.aws.amazon.com/whitepapers/latest/aws-overview/compute-services.html
+Hands-On Tutorials: Compute - https://aws.amazon.com/getting-started/hands-on/?awsf.getting-started-category=category%23compute&awsf.getting-started-content-type=content-type%23hands-on
+Category Deep Dive: Serverless - https://aws.amazon.com/getting-started/deep-dive-serverless/
+AWS Customer Stories: Serverless - https://aws.amazon.com/solutions/case-studies/?customer-references-cards.sort-by=item.additionalFields.publishedDate&customer-references-cards.sort-order=desc&awsf.customer-references-location=*all&awsf.customer-references-segment=*all&awsf.customer-references-product=product%23vpc%7Cproduct%23api-gateway%7Cproduct%23cloudfront%7Cproduct%23route53%7Cproduct%23directconnect%7Cproduct%23elb&awsf.customer-references-category=category%23serverless
+
+
+=> QUIZ
+
+1 - Which AWS service is the best choice for publishing messages to subscribers?
+
+a) Amazon Simple Queue Service (Amazon SQS)
+
+b) Amazon EC2 Auto Scaling
+
+c) Amazon Simple Notification Service (Amazon SNS)
+
+d) Elastic Load Balancing
+
+The correct response option is Amazon Simple Notification Service (Amazon SNS).
+
+
+
+Amazon SNS is a publish/subscribe service. Using Amazon SNS topics, a publisher publishes messages to subscribers.
+
+The other response options are incorrect because: 
+
+Amazon Simple Queue Service (Amazon SQS) is a message queuing service. It does not use the message subscription and topic model that is involved with Amazon SNS.
+Amazon EC2 Auto Scaling enables you to automatically add or remove Amazon EC2 instances in response to changing application demand.
+Elastic Load Balancing is the AWS service that automatically distributes incoming application traffic across multiple resources, such as Amazon EC2 instances.
+
+
+2 - You want to use an Amazon EC2 instance for a batch processing workload. What would be the best Amazon EC2 instance type to use?
+
+a) General purpose
+
+b) Memory optimized
+
+c) Compute optimized
+
+d) Storage optimized
+
+The correct response option is Compute optimized.
+ 
+
+
+The other response options are incorrect because:
+
+General purpose instances provide a balance of compute, memory, and networking resources. This instance family would not be the best choice for the application in this scenario.
+Compute optimized instances are more well suited for batch processing workloads than general purpose instances.
+Memory optimized instances are more ideal for workloads that process large datasets in memory, such as high-performance databases.
+Storage optimized instances are designed for workloads that require high, sequential read and write access to large datasets on local storage.
+The question does not specify the size of data that will be processed. Batch processing involves processing data in groups. A compute optimized instance is ideal for this type of workload, which would benefit from a high-performance processor.
+
+
+3 - What are the contract length options for Amazon EC2 Reserved Instances? (Select TWO.)
+
+a) 1 year
+
+b) 2 years
+
+c) 3 years
+
+d) 4 years
+
+e) 5 years
+
+The two correct response options are:
+
+1 year
+3 years
+Reserved Instances require a commitment of either 1 year or 3 years. The 3-year option offers a larger discount.
+
+
+4 - You have a workload that will run for a total of 6 months and can withstand interruptions. What would be the most cost-efficient Amazon EC2 purchasing option?
+
+a) Reserved Instance
+
+b) Spot Instance
+
+c) Dedicated Instance
+
+d) On-Demand Instance
+
+The correct response option is Spot Instance.
+
+
+
+The other response options are incorrect because:
+
+Reserved Instances require a contract length of either 1 year or 3 years. The workload in this scenario will only be running for 6 months.
+Dedicated Instances run in a virtual private cloud (VPC) on hardware that is dedicated to a single customer. They have a higher cost than the other response options, which run on shared hardware.
+On-Demand Instances fulfill the requirements of running for only 6 months and withstanding interruptions.
+However, a Spot Instance would be the best choice because it does not require a minimum contract length, is able to withstand interruptions, and costs less than an On-Demand Instance.
+
+
+5 - Which process is an example of Elastic Load Balancing?
+
+a) Ensuring that no single Amazon EC2 instance has to carry the full workload on its own
+
+b) Removing unneeded Amazon EC2 instances when demand is low
+
+c) Adding a second Amazon EC2 instance during an online store’s popular sale
+
+d) Automatically adjusting the number of Amazon EC2 instances to meet demand
+
+The correct response option is Ensuring that no single Amazon EC2 instance has to carry the full workload on its own.
+
+
+
+Elastic Load Balancing is the AWS service that automatically distributes incoming application traffic across multiple resources, such as Amazon EC2 instances. This helps to ensure that no single resource becomes overutilized.
+The other response options are all examples of Auto Scaling.
+
+
+6 - You want to deploy and manage containerized applications. Which service should you use?
+
+a) AWS Lambda
+
+b) Amazon Simple Notification Service (Amazon SNS)
+
+c) Amazon Simple Queue Service (Amazon SQS)
+
+d) Amazon Elastic Kubernetes Service (Amazon EKS)
+
+The correct response option is Amazon Elastic Kubernetes Service (Amazon EKS).
+
+
+
+Amazon EKS is a fully managed Kubernetes service. Kubernetes is open-source software that enables you to deploy and manage containerized applications at scale.
+
+The other response options are incorrect because:
+
+AWS Lambda is a service that lets you run code without provisioning or managing servers.
+Amazon Simple Queue Service (Amazon SQS) is a service that enables you to send, store, and receive messages between software components through a queue.
+Amazon Simple Notification Service (Amazon SNS) is a publish/subscribe service. Using Amazon SNS topics, a publisher publishes messages to subscribers.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MODULE 3
+Summarize the benefits of the AWS Global Infrastructure.
+Describe the basic concept of Availability Zones.
+Describe the benefits of Amazon CloudFront and edge locations.
+Compare different methods for provisioning AWS services.
+
+
+=> Selecting a Region
+
+- Compliance with data governance and legal requirements
+Depending on your company and location, you might need to run your data out of specific areas. 
+For example, if your company requires all of its data to reside within the boundaries of the UK, you would choose the London Region. 
+Not all companies have location-specific data regulations, so you might need to focus more on the other three factors.
+
+- Proximity to your customers
+Selecting a Region that is close to your customers will help you to get content to them faster.
+For example, your company is based in Washington, DC, and many of your customers live in Singapore.
+You might consider running your infrastructure in the Northern Virginia Region to be close to company headquarters, and run your applications from the Singapore Region.
+
+- Available services within a Region
+Sometimes, the closest Region might not have all the features that you want to offer to customers.
+AWS is frequently innovating by creating new services and expanding on features within existing services.
+However, making new services available around the world sometimes requires AWS to build out physical hardware one Region at a time. 
+Suppose that your developers want to build an application that uses Amazon Braket (AWS quantum computing platform).
+As of this course, Amazon Braket is not yet available in every AWS Region around the world, so your developers would have to run it in one of the Regions that already offers it.
+
+- Pricing
+Suppose that you are considering running applications in both the United States and Brazil.
+The way Brazil’s tax structure is set up, it might cost 50% more to run the same workload out of the São Paulo Region compared to the Oregon Region.
+You will learn in more detail that several factors determine pricing, but for now know that the cost of services can vary from Region to Region.
+
+
+=> Availability Zones
+An Availability Zone is a single data center or a group of data centers within a Region. Availability Zones are located tens of miles apart from each other.
+This is close enough to have low latency (the time between when content requested and received) between Availability Zones.
+However, if a disaster occurs in one part of the Region, they are distant enough to reduce the chance that multiple Availability Zones are affected.
+
+
+=> Running Amazon EC2 instances in multiple Availability Zones
+- Amazon EC2 instance in a single Availability Zone
+Suppose that you’re running an application on a single Amazon EC2 instance in the Northern California Region.
+The instance is running in the us-west-1a Availability Zone. If us-west-1a were to fail, you would lose your instance. 
+- Amazon EC2 instances in multiple Availability Zones
+A best practice is to run applications across at least two Availability Zones in a Region. In this example, you might choose to run a second Amazon EC2 instance in us-west-1b.
+- Availability Zone failure
+If us-west-1a were to fail, your application would still be running in us-west-1b.
+
+
+=> Edge Locations
+An edge location is a site that Amazon CloudFront uses to store cached copies of your content closer to your customers for faster delivery.
+
+Amazon CloudFront is a service that helps deliver data, video, applications, and APIs to customers around the world with low latency and high transfer speeds.
+Amazon CloudFront uses what are called Edge locations, all around the world, to help accelerate communication with users, no matter where they are. 
+
+AWS Outposts: AWS will basically install a fully operational mini Region, right inside your own data center.
+That's owned and operated by AWS, using 100% of AWS functionality, but isolated within your own building.
+It's not a solution most customers need, but if you have specific problems that can only be solved by staying in your own building, we understand, AWS Outposts can help. 
+
+Number one, Regions are geographically isolated areas, where you can access services needed to run your enterprise.
+Number two, Regions contain Availability Zones, that allow you to run across physically separated buildings, tens of miles of separation, while keeping your application logically unified.
+Availability Zones help you solve high availability and disaster recovery scenarios, without any additional effort on your part,
+and number three, AWS Edge locations run Amazon CloudFront to help get content closer to your customers, no matter where they are in the world.
+
+
+=> Ways to interact with AWS services
+- AWS MANAGEMENT CONSOLE
+The AWS Management Console is a web-based interface for accessing and managing AWS services.
+You can quickly access recently used services and search for other services by name, keyword, or acronym.
+The console includes wizards and automated workflows that can simplify the process of completing tasks.
+You can also use the AWS Console mobile application to perform tasks such as monitoring resources, viewing alarms, and accessing billing information.
+Multiple identities can stay logged into the AWS Console mobile app at the same time.
+
+- AWS COMMAND LINE INTERFACE
+To save time when making API requests, you can use the AWS Command Line Interface (AWS CLI).
+AWS CLI enables you to control multiple AWS services directly from the command line within one tool.
+AWS CLI is available for users on Windows, macOS, and Linux. 
+By using AWS CLI, you can automate the actions that your services and applications perform through scripts.
+For example, you can use commands to launch an Amazon EC2 instance, connect an Amazon EC2 instance to a specific Auto Scaling group, and more.
+
+- SOFTWARE DEVELOPMENT KITS
+Another option for accessing and managing AWS services is the software development kits (SDKs).
+SDKs make it easier for you to use AWS services through an API designed for your programming language or platform.
+SDKs enable you to use AWS services with your existing applications or create entirely new applications that will run on AWS.
+To help you get started with using SDKs, AWS provides documentation and sample code for each supported programming language.
+Supported programming languages include C++, Java, .NET, and more.
+
+
+=> AWS Elastic Beanstalk
+With AWS Elastic Beanstalk, you provide code and configuration settings, and Elastic Beanstalk deploys the resources necessary to perform the following tasks:
+
+- Adjust capacity
+- Load balancing
+- Automatic scaling
+- Application health monitoring
+
+
+=> AWS CloudFormation
+With AWS CloudFormation, you can treat your infrastructure as code.
+This means that you can build an environment by writing lines of code instead of using the AWS Management Console to individually provision resources.
+AWS CloudFormation provisions your resources in a safe, repeatable manner, enabling you to frequently build your infrastructure and applications without having to perform manual actions.
+It determines the right operations to perform when managing your stack and rolls back changes automatically if it detects errors.
+
+
+=> ADDITIONAL RESOURCES
+- Global Infrastructure - https://aws.amazon.com/about-aws/global-infrastructure/
+- Interactive map of the AWS Global Infrastructure - https://www.infrastructure.aws/
+- Regions and Availability Zones - https://aws.amazon.com/about-aws/global-infrastructure/regions_az
+- AWS Networking and Content Delivery Blog - https://aws.amazon.com/blogs/networking-and-content-delivery/
+- Tools to Build on AWS - https://aws.amazon.com/tools/
+- AWS Customer Stories: Content Delivery - https://aws.amazon.com/solutions/case-studies/?customer-references-cards.sort-by=item.additionalFields.publishedDate&customer-references-cards.sort-order=desc&awsf.customer-references-location=*all&awsf.customer-references-segment=*all&awsf.customer-references-product=product%23vpc%7Cproduct%23api-gateway%7Cproduct%23cloudfront%7Cproduct%23route53%7Cproduct%23directconnect%7Cproduct%23elb&awsf.customer-references-category=category%23content-delivery
+
+
+=> QUIZ
+
+1 - Which statement best describes an Availability Zone?
+
+a) A geographical area that contains AWS resources
+
+b) A single data center or group of data centers within a Region
+
+c) A data center that an AWS service uses to perform service-specific operations
+
+d) A service that you can use to run AWS infrastructure within your own on-premises data center in a hybrid approach
+
+The correct response option is A single data center or group of data centers within a Region.
+
+
+
+The other response options are incorrect because:
+
+A Region is a geographical area that contains AWS resources.
+An edge location is a data center that an AWS service uses to perform service-specific operations. Edge locations are examined in the next section of this module.
+AWS Outposts is a service that you can use to run AWS infrastructure, services, and tools in your own on-premises data center in a hybrid approach. AWS Outposts is explored later in this module.
+
+
+2 - Which statement is TRUE for the AWS global infrastructure?
+
+a) A Region consists of a single Availability Zone.
+
+b) An Availability Zone consists of two or more Regions.
+
+c) A Region consists of two or more Availability Zones.
+
+d) An Availability Zone consists of a single Region.
+
+The correct response option is A Region consists of two or more Availability Zones.
+
+For example, the South America (São Paulo) Region is sa-east-1. It includes three Availability Zones: sa-east-1a, sa-east-1b, and sa-east-1c.
+
+
+3 - Which factors should be considered when selecting a Region? (Select TWO.)
+
+a) Compliance with data governance and legal requirements
+
+b) Proximity to your customers
+
+c) Access to 24/7 technical support
+
+d) Ability to assign custom permissions to different users
+
+e) Access to the AWS Command Line Interface (AWS CLI)
+
+The correct two response options are:
+
+Compliance with data governance and legal requirements
+Proximity to your customers
+Two other factors to consider when selecting a Region are pricing and the services that are available in a Region.
+
+
+
+The other response options are incorrect because:
+
+The level of support that you choose is not determined by Region. AWS Support plans are explored later in this course.
+Assigning custom permissions to different users is a feature that is possible in all AWS Regions.
+The AWS Command Line Interface (AWS CLI) is available in all AWS Regions.
+
+
+4 - Which statement best describes Amazon CloudFront?
+
+a) A service that enables you to run infrastructure in a hybrid cloud approach
+
+b) A serverless compute engine for containers
+
+c) A service that enables you to send and receive messages between software components through a queue
+
+d) A global content delivery service
+
+The correct response option is A global content delivery service.
+
+
+
+Amazon CloudFront is a content delivery service.
+It uses a network of edge locations to cache content and deliver content to customers all over the world.
+When content is cached, it is stored locally as a copy. This content might be video files, photos, webpages, and so on.
+
+The other response options are incorrect because:
+
+AWS Outposts is a service that enables you to run infrastructure in a hybrid cloud approach.
+AWS Fargate is a serverless compute engine for containers.
+Amazon Simple Queue Service (Amazon SQS) is a service that enables you to send, store, and receive messages between software components through a queue.
+
+
+5 - Which site does Amazon CloudFront use to cache copies of content for faster delivery to users at any location?
+
+a) Region
+
+b) Availability Zone
+
+c) Edge location
+
+d) Origin
+
+The correct response option is Edge location.
+
+
+
+The other response options are incorrect because:
+
+A Region is a separate geographical location with multiple locations that are isolated from each other.
+An Availability Zone is a fully isolated portion of the AWS global infrastructure.
+An origin is the server from which CloudFront gets your files.
+Examples of CloudFront origins include Amazon Simple Storage Service (Amazon S3) buckets and web servers.
+Note: Amazon S3 is explored later in this course.
+
+
+6 - Which action can you perform with AWS Outposts?
+
+a) Automate actions for AWS services and applications through scripts.
+
+b) Access wizards and automated workflows to perform tasks in AWS services.
+
+c) Develop AWS applications in supported programming languages.
+
+d) Extend AWS infrastructure and services to your on-premises data center.
+
+The correct response option is Extend AWS infrastructure and services to your on-premises data center.
+
+
+
+The other response options are incorrect because:
+
+The AWS Command Line Interface (AWS CLI) is used to automate actions for AWS services and applications through scripts.
+The AWS Management Console includes wizards and workflows that you can use to complete tasks in AWS services.
+Software development kits (SDKs) enable you to develop AWS applications in supported programming languages.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MODULE 4
+Describe the basic concepts of networking.
+Describe the difference between public and private networking resources. 
+Explain a virtual private gateway using a real life scenario. 
+Explain a virtual private network (VPN) using a real life scenario.
+Describe the benefit of AWS Direct Connect. 
+Describe the benefit of hybrid deployments. 
+Describe the layers of security used in an IT strategy.
+Describe the services customers use to interact with the AWS global network.
+
+=> Amazon Virtual Private Cloud (VPC)
+A VPC lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define.
+These resources can be public facing so they have access to the internet, or private with no internet access, usually for backend services like databases or application servers.
+The public and private grouping of resources are known as subnets and they are ranges of IP addresses in your VPC.
