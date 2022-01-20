@@ -678,3 +678,6 @@ Describe the services customers use to interact with the AWS global network.
 A VPC lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define.
 These resources can be public facing so they have access to the internet, or private with no internet access, usually for backend services like databases or application servers.
 The public and private grouping of resources are known as subnets and they are ranges of IP addresses in your VPC.
+
+
+=> Internet gateway
