@@ -149,6 +149,16 @@ Users can also connect to the instance by logging in and accessing the computer 
 Use
 After you have connected to the instance, you can begin using it. You can run commands to install software, add storage, copy and organize files, and more.
 
+Multitenancy: sharing underlying hardware. The hypervisor is responsible for coordinating this multitenancy and it is managed by AWS. 
+The hypervisor is responsible for isolating the virtual machines from each other as they share resources from the host. This means EC2 instances are secure. 
+Even though they may be sharing resources, one EC2 instance is not aware of any other EC2 instances also on that host. They are secure and separate from each other. 
+
+When you provision an EC2 instance, you can choose the operating system based on either Windows or Linux. You can provision thousands of EC2 instances on demand.
+You also configure what software you want running on the instance. EC2 instances are also resizable. 
+You might start with a small instance, realize the application you are running is starting to max out that server, 
+and then you can give that instance more memory and more CPU. Which is what we call vertically scaling an instance.
+You also control the networking aspect of EC2. So what type of requests make it to your server and if they are publicly or privately accessible is something you decide.
+
 
 => Amazon EC2 instance types are optimized for different tasks. When selecting an instance type, consider the specific needs of your workloads and applications. 
 This might include requirements for compute, memory, or storage capabilities.
