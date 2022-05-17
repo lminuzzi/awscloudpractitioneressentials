@@ -335,6 +335,22 @@ When using AWS Fargate, you do not need to provision or manage servers. AWS Farg
 You can focus more on innovating and developing your applications, and you pay only for the resources that are required to run your containers.
 
 
+=> Compute Services Differences
+Amazon EC2
+- Host traditional applications.
+- Have full access to the OS.
+
+AWS Lambda
+- Host short running functions.
+- Service-oriented applications.
+- Event driven applications.
+- No provisioning or managing servers.
+
+Amazon ECS or Amazon EKS
+- Run Docker container-based workloads on AWS.
+- Can run in EC2 instances that you manage or in a serveless environment like AWS Fargate that will be managed for you by AWS.
+
+
 => ADDITIONAL RESOURCES
 
 Compute on AWS - https://aws.amazon.com/products/compute
