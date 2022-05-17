@@ -503,6 +503,10 @@ Describe the basic concept of Availability Zones.
 Describe the benefits of Amazon CloudFront and edge locations.
 Compare different methods for provisioning AWS services.
 
+=> Region
+A Region is a geographical area that contains AWS resources.
+Regions are geographically isolated areas, where you can access services needed to run your enterprise.
+
 
 => Selecting a Region
 
@@ -557,11 +561,13 @@ AWS Outposts: AWS will basically install a fully operational mini Region, right 
 That's owned and operated by AWS, using 100% of AWS functionality, but isolated within your own building.
 It's not a solution most customers need, but if you have specific problems that can only be solved by staying in your own building, we understand, AWS Outposts can help. 
 
+
+=> Key Points
 Number one, Regions are geographically isolated areas, where you can access services needed to run your enterprise.
 Number two, Regions contain Availability Zones, that allow you to run across physically separated buildings, tens of miles of separation, 
 while keeping your application logically unified.
-Availability Zones help you solve high availability and disaster recovery scenarios, without any additional effort on your part,
-and number three, AWS Edge locations run Amazon CloudFront to help get content closer to your customers, no matter where they are in the world.
+Availability Zones help you solve high availability and disaster recovery scenarios, without any additional effort on your part.
+Number three, AWS Edge locations run Amazon CloudFront to help get content closer to your customers, no matter where they are in the world.
 
 
 => Ways to interact with AWS services
