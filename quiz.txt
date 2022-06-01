@@ -1402,7 +1402,406 @@ A service that enables you to run relational databases in the AWS Cloud describe
 A service that you can use to migrate relational databases, nonrelational databases, and other types of data stores describes AWS Database Migration Service (AWS DMS).
 An enterprise-class relational database describes Amazon Aurora.
 
+
+5 - Which service is used to query and analyze data across a data warehouse?
+
+a) Amazon Redshift
+
+b) Amazon Neptune
+
+c) Amazon DocumentDB
+
+d) Amazon ElastiCache
+
+The correct response option is Amazon Redshift.
+
+Amazon Redshift is a data warehousing service that you can use for big data analytics. 
+Use Amazon Redshift to collect data from many sources and help you understand relationships and trends across your data.
+
+ 
+The other response options are incorrect because:
+
+Amazon Neptune is a graph database service. You can use Amazon Neptune to build and 
+run applications that work with highly connected datasets, such as recommendation engines, fraud detection, and knowledge graphs.
+Amazon DocumentDB is a document database service that supports MongoDB workloads.
+Amazon ElastiCache is a service that adds caching layers on top of your databases to help improve the read times of common requests.
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 MODULE 6
+Explain the benefits of the shared responsibility model.
+Describe multi-factor authentication (MFA).
+Differentiate between the AWS Identity and Access Management (IAM) security levels.
+Explain the main benefits of AWS Organizations.
+Describe security policies at a basic level.
+Summarize the benefits of compliance with AWS.
+Explain additional AWS security services at a basic level.
 
+
+=> Shared Responsibility Model
+The shared responsibility model divides into customer responsibilities (commonly referred to as “security in the cloud”) 
+and AWS responsibilities (commonly referred to as “security of the cloud”).
+
+- Customers: Security in the cloud
+Customers are responsible for the security of everything that they create and put in the AWS Cloud.
+
+- AWS: Security of the cloud
+AWS is responsible for security of the cloud.
+    Physical security of data centers
+    Hardware and software infrastructure
+    Network infrastructure
+    Virtualization infrastructure
+
+
+=> Knowledge check
+
+1 - Which tasks are the responsibilities of customers? (Select TWO.)
+
+a) Maintaining network infrastructure
+
+b) Patching software on Amazon EC2 instances
+
+c) Implementing physical security controls at data centers
+
+d) Setting permissions for Amazon S3 objects
+
+e) Maintaining servers that run Amazon EC2 instances
+
+The correct two response options are:
+
+Patching software on Amazon EC2 instances
+Setting permissions for Amazon S3 objects
+The other three response options are tasks that are the responsibility of AWS.
+
+
+=> AWS Identity and Access Management (IAM)
+    Users
+    Groups
+    Roles
+    Policies
+    Identity federation
+    Multi-factor authentication (MFA)
+It enables you to manage access to AWS services and resources securely. 
+
+IAM gives you the flexibility to configure access based on your company’s specific operational and security needs. 
+You do this by using a combination of IAM features, which are explored in detail in this lesson:
+    IAM users, groups, and roles
+    IAM policies
+    Multi-factor authentication
+
+- AWS account root user
+When you first create an AWS account, you begin with an identity known as the root user.
+
+Best practice:
+Do not use the root user for everyday tasks. 
+Instead, use the root user to create your first IAM user and assign it permissions to create other users.
+Then, continue to create other IAM users, and access those identities for performing regular tasks throughout AWS.
+Only use the root user when you need to perform a limited number of tasks that are only available to the root user.
+Examples of these tasks include changing your root user email address and changing your AWS support plan.
+
+- IAM users
+An IAM user is an identity that you create in AWS. It represents the person or application that interacts with AWS services and resources.
+It consists of a name and credentials.
+By default, when you create a new IAM user in AWS, it has no permissions associated with it.
+To allow the IAM user to perform specific actions in AWS, such as launching an Amazon EC2 instance or creating an Amazon S3 bucket, 
+you must grant the IAM user the necessary permissions.
+
+Best practice:
+We recommend that you create individual IAM users for each person who needs to access AWS.
+Even if you have multiple employees who require the same level of access, you should create individual IAM users for each of them.
+This provides additional security by allowing each IAM user to have a unique set of security credentials.
+
+
+- IAM policies
+An IAM policy is a document that allows or denies permissions to AWS services and resources.  
+IAM policies enable you to customize users’ levels of access to resources.
+For example, you can allow users to access all of the Amazon S3 buckets within your AWS account, or only a specific bucket.
+
+Best practice:
+Follow the security principle of least privilege when granting permissions. 
+By following this principle, you help to prevent users or roles from having more permissions than needed to perform their tasks.
+
+- IAM groups
+It is a collection of IAM users. When you assign an IAM policy to a group, all users in the group are granted permissions specified by the policy.
+
+- IAM roles
+It is an identity that you can assume to gain temporary access to permissions.
+Before an IAM user, application, or service can assume an IAM role, they must be granted permissions to switch to the role.
+When someone assumes an IAM role, they abandon all previous permissions that they had under a previous role and assume the permissions of the new role. 
+
+Best practice:
+IAM roles are ideal for situations in which access to services or resources needs to be granted temporarily, instead of long-term.
+
+- Multi-factor authentication
+It provides an extra layer of security for your AWS account, such as a random code sent to your phone.
+
+
+=> AWS Organizations
+    Centralized management
+    Consolidated billing
+    Hierarchical groupings of accounts
+    AWS service API actions access control
+You can use AWS Organizations to consolidate and manage multiple AWS accounts within a central location.
+When you create an organization, AWS Organizations automatically creates a root, which is the parent container for all the accounts in your organization. 
+You can centrally control permissions for the accounts in your organization by using service control policies (SCPs).
+SCPs enable you to place restrictions on the AWS services, resources, and individual API actions that users and roles in each account can access.
+
+- Organizational units
+In AWS Organizations, you can group accounts into organizational units (OUs) to make it easier to manage accounts with similar business or security requirements.
+When you apply a policy to an OU, all the accounts in the OU automatically inherit the permissions specified in the policy.  
+By organizing separate accounts into OUs, you can more easily isolate workloads or applications that have specific security requirements.
+For instance, if your company has accounts that can access only the AWS services that meet certain regulatory requirements, you can put these accounts into one OU.
+Then, you can attach a policy to the OU that blocks access to all other AWS services that do not meet the regulatory requirements.
+
+
+=> Knowledge check
+
+1 - You are configuring service control policies (SCPs) in AWS Organizations. Which identities and resources can SCPs be applied to? (Select TWO.)
+
+a) IAM users
+
+b) IAM groups
+
+c) An individual member account
+
+d) IAM roles
+
+e) An organizational unit (OU)
+
+The correct two response options are:
+
+An individual member account
+An organizational unit (OU)
+In AWS Organizations, you can apply service control policies (SCPs) to the organization root, an individual member account, 
+or an OU. An SCP affects all IAM users, groups, and roles within an account, including the AWS account root user.
+
+
+You can apply IAM policies to IAM users, groups, or roles. You cannot apply an IAM policy to the AWS account root user.
+
+
+=> AWS Artifact
+It is a service that provides on-demand access to AWS security and compliance reports and select online agreements.
+AWS Artifact consists of two main sections: AWS Artifact Agreements and AWS Artifact Reports.
+
+- AWS Artifact Agreements
+In AWS Artifact Agreements, you can review, accept, and manage agreements for an individual account and for all your accounts in AWS Organizations.
+Different types of agreements are offered to address the needs of customers who are subject to specific regulations,
+such as the Health Insurance Portability and Accountability Act (HIPAA).
+
+- AWS Artifact Reports
+It provide compliance reports from third-party auditors. These auditors have tested and verified that AWS is compliant with a variety of global, 
+regional, and industry-specific security standards and regulations. AWS Artifact Reports remains up to date with the latest reports released.
+You can provide the AWS audit artifacts to your auditors or regulators as evidence of AWS security controls. 
+
+
+=> Customer Compliance Center
+The Customer Compliance Center contains resources to help you learn more about AWS compliance. 
+In the Customer Compliance Center, you can read customer compliance stories to discover how companies in 
+regulated industries have solved various compliance, governance, and audit challenges.
+You can also access compliance whitepapers and documentation on topics such as:
+    AWS answers to key compliance questions
+    An overview of AWS risk and compliance
+    An auditing security checklist
+Additionally, the Customer Compliance Center includes an auditor learning path. This learning path is designed for individuals in auditing, 
+compliance, and legal roles who want to learn more about how their internal operations can demonstrate compliance using the AWS Cloud.
+
+
+=> Knowledge check
+
+1 - Which tasks can you complete in AWS Artifact? (Select TWO.)
+
+a) Access AWS compliance reports on-demand.
+
+b) Consolidate and manage multiple AWS accounts within a central location.
+
+c) Create users to enable people and applications to interact with AWS services and resources.
+
+d) Set permissions for accounts by configuring service control policies (SCPs).
+
+e) Review, accept, and manage agreements with AWS.
+
+The correct two response options are:
+
+Access AWS compliance reports on-demand.
+Review, accept, and manage agreements with AWS.
+The other response options are incorrect because:
+
+Consolidate and manage multiple AWS accounts within a central location- This task can be completed in AWS Organizations.
+Create users to enable people and applications to interact with AWS services and resources- This task can be completed in AWS Identity and Access Management (IAM).
+Set permissions for accounts by configuring service control policies (SCPs)- This task can be completed in AWS Organizations.
+
+
+=> AWS Shield
+AWS Shield is a service that protects applications against DDoS attacks. AWS Shield provides two levels of protection: Standard and Advanced.
+
+- AWS Shield Standard
+AWS Shield Standard automatically protects all AWS customers at no cost.
+It protects your AWS resources from the most common, frequently occurring types of DDoS attacks. 
+As network traffic comes into your applications, AWS Shield Standard uses a variety of analysis 
+techniques to detect malicious traffic in real time and automatically mitigates it. 
+
+- AWS Shield Advanced
+AWS Shield Advanced is a paid service that provides detailed attack diagnostics and the ability to detect and mitigate sophisticated DDoS attacks. 
+It also integrates with other services such as Amazon CloudFront, Amazon Route 53, and Elastic Load Balancing.
+Additionally, you can integrate AWS Shield with AWS WAF by writing custom rules to mitigate complex DDoS attacks.
+
+
+=> AWS Key Management Service (AWS KMS)
+It enables you to perform encryption operations through the use of cryptographic keys. 
+A cryptographic key is a random string of digits used for locking (encrypting) and unlocking (decrypting) data.
+You can use AWS KMS to create, manage, and use cryptographic keys. You can also control the use of keys across a wide range of services and in your applications.
+With AWS KMS, you can choose the specific levels of access control that you need for your keys. For example, 
+you can specify which IAM users and roles are able to manage keys. 
+Alternatively, you can temporarily disable keys so that they are no longer in use by anyone.
+Your keys never leave AWS KMS, and you are always in control of them.
+
+
+=> AWS WAF
+AWS WAF is a web application firewall that lets you monitor network requests that come into your web applications. 
+AWS WAF works together with Amazon CloudFront and an Application Load Balancer.
+Recall the network access control lists that you learned about in an earlier module.
+AWS WAF works in a similar way to block or allow traffic. However, it does this by using a web access control list (ACL) to protect your AWS resources. 
+
+
+=> Amazon Inspector
+Amazon Inspector helps to improve the security and compliance of applications by running automated security assessments.
+It checks applications for security vulnerabilities and deviations from security best practices, 
+such as open access to Amazon EC2 instances and installations of vulnerable software versions. 
+
+After Amazon Inspector has performed an assessment, it provides you with a list of security findings.
+The list prioritizes by severity level, including a detailed description of each security issue and a recommendation for how to fix it.
+However, AWS does not guarantee that following the provided recommendations resolves every potential security issue.
+Under the shared responsibility model, customers are responsible for the security of their applications, processes, and tools that run on AWS services.
+
+
+=> Amazon GuardDuty
+Amazon GuardDuty is a service that provides intelligent threat detection for your AWS infrastructure and resources.
+It identifies threats by continuously monitoring the network activity and account behavior within your AWS environment.
+
+After you have enabled GuardDuty for your AWS account, GuardDuty begins monitoring your network and account activity. 
+You do not have to deploy or manage any additional security software. GuardDuty then continuously analyzes data from multiple AWS sources, 
+including VPC Flow Logs and DNS logs. 
+
+If GuardDuty detects any threats, you can review detailed findings about them from the AWS Management Console. 
+Findings include recommended steps for remediation. You can also configure AWS Lambda functions to take remediation steps automatically 
+in response to GuardDuty’s security findings.
+
+
+=> QUIZ
+
+1 - Which statement best describes an IAM policy?
+
+a) An authentication process that provides an extra layer of protection for your AWS account
+
+b) A document that grants or denies permissions to AWS services and resources
+
+c) An identity that you can assume to gain temporary access to permissions
+
+d) The identity that is established when you first create an AWS account
+
+The correct response option is: A document that grants or denies permissions to AWS services and resources.
+
+IAM policies provide you with the flexibility to customize users’ levels of access to resources.
+For instance, you can allow users to access all the Amazon S3 buckets in your AWS account or only a specific bucket.
+
+
+The other response options are incorrect because:
+
+Multi-factor authentication (MFA) is an authentication process that provides an extra layer of protection for your AWS account.
+An IAM role is an identity that you can assume to gain temporary access to permissions.
+The root user identity is the identity that is established when you first create an AWS account.
+
+
+2 - An employee requires temporary access to create several Amazon S3 buckets. Which option would be the best choice for this task?
+
+a) AWS account root user
+
+b) IAM group
+
+c) IAM role
+
+d) Service control policy (SCP)
+
+The correct answer is IAM role.
+
+An IAM role is an identity that you can assume to gain temporary access to permissions.
+When someone assumes an IAM role, they abandon all permissions that they had under a previous role and assume the permissions of the new role.
+IAM roles are ideal for situations in which access to services or resources needs to be granted temporarily instead of long-term.
+
+ 
+The other response options are incorrect because:
+
+The AWS account root user is established when you first create an AWS account. As a best practice, do not use the root user for everyday tasks.
+Although you can attach IAM policies to an IAM group, this would not be the best choice for this scenario because the employee only needs 
+to be granted temporary permissions.
+Service control policies (SCPs) enable you to centrally control permissions for the accounts in your organization.
+An SCP is not the best choice for granting temporary permissions to an individual employee.
+
+
+3 - Which statement best describes the principle of least privilege?
+
+a) Adding an IAM user into at least one IAM group
+
+b) Checking a packet’s permissions against an access control list
+
+c) Granting only the permissions that are needed to perform specific tasks
+
+d) Performing a denial of service attack that originates from at least one device
+
+The correct response option is: Granting only the permissions that are needed to perform specific job tasks.
+
+When you grant permissions by following the principle of least privilege, you prevent users or roles from having more permissions than needed 
+to perform specific job tasks. For example, cashiers in the coffee shop should be given access to the cash register system. 
+As a best practice, grant IAM users and roles a minimum set of permissions and then grant additional permissions as needed.
+
+
+4 - Which service helps protect your applications against distributed denial-of-service (DDoS) attacks?
+
+a) Amazon GuardDuty
+
+b) Amazon Inspector
+
+c) AWS Artifact
+
+d) AWS Shield
+
+The correct response option is AWS Shield.
+
+As network traffic comes into your applications, AWS Shield uses a variety of analysis techniques 
+to detect potential DDoS attacks in real time and automatically mitigates them.
+
+
+The other response options are incorrect because:
+Amazon GuardDuty is a service that provides intelligent threat detection for your AWS infrastructure and resources.
+It identifies threats by continuously monitoring the network activity and account behavior within your AWS environment.
+Amazon Inspector checks applications for security vulnerabilities and deviations from security best practices, 
+such as open access to Amazon EC2 instances and installations of vulnerable software versions.
+AWS Artifact is a service that provides on-demand access to AWS security and compliance reports and select online agreements.
+
+
+5 - Which task can AWS Key Management Service (AWS KMS) perform?
+
+a) Configure multi-factor authentication (MFA).
+
+b) Update the AWS account root user password.
+
+c) Create cryptographic keys.
+
+d) Assign permissions to users and groups.
+
+The correct response option is: Create cryptographic keys.
+
+AWS Key Management Service (AWS KMS) enables you to perform encryption operations through the use of cryptographic keys.
+A cryptographic key is a random string of digits used for locking (encrypting) and unlocking (decrypting) data.
+You can use AWS KMS to create, manage, and use cryptographic keys. You can also control the use of keys across a wide range of services and in your applications.
+
+ 
+The other response options are incorrect because:
+
+You can configure multi-factor authentication (MFA) in AWS Identity and Access Management (IAM).
+You can update the AWS account root user password in the AWS Management Console.
+You can assign permissions to users and groups in AWS Identity and Access Management (IAM).
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MODULE 7
