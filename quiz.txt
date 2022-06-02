@@ -1481,9 +1481,9 @@ The other three response options are tasks that are the responsibility of AWS.
     Policies
     Identity federation
     Multi-factor authentication (MFA)
-It enables you to manage access to AWS services and resources securely. 
+It enables you to manage access to AWS services and resources securely.
 
-IAM gives you the flexibility to configure access based on your company’s specific operational and security needs. 
+IAM gives you the flexibility to configure access based on your company’s specific operational and security needs.
 You do this by using a combination of IAM features, which are explored in detail in this lesson:
     IAM users, groups, and roles
     IAM policies
@@ -1493,7 +1493,7 @@ You do this by using a combination of IAM features, which are explored in detail
 When you first create an AWS account, you begin with an identity known as the root user.
 
 Best practice:
-Do not use the root user for everyday tasks. 
+Do not use the root user for everyday tasks.
 Instead, use the root user to create your first IAM user and assign it permissions to create other users.
 Then, continue to create other IAM users, and access those identities for performing regular tasks throughout AWS.
 Only use the root user when you need to perform a limited number of tasks that are only available to the root user.
@@ -1513,12 +1513,12 @@ This provides additional security by allowing each IAM user to have a unique set
 
 
 - IAM policies
-An IAM policy is a document that allows or denies permissions to AWS services and resources.  
+An IAM policy is a document that allows or denies permissions to AWS services and resources.
 IAM policies enable you to customize users’ levels of access to resources.
 For example, you can allow users to access all of the Amazon S3 buckets within your AWS account, or only a specific bucket.
 
 Best practice:
-Follow the security principle of least privilege when granting permissions. 
+Follow the security principle of least privilege when granting permissions.
 By following this principle, you help to prevent users or roles from having more permissions than needed to perform their tasks.
 
 - IAM groups
@@ -1527,7 +1527,7 @@ It is a collection of IAM users. When you assign an IAM policy to a group, all u
 - IAM roles
 It is an identity that you can assume to gain temporary access to permissions.
 Before an IAM user, application, or service can assume an IAM role, they must be granted permissions to switch to the role.
-When someone assumes an IAM role, they abandon all previous permissions that they had under a previous role and assume the permissions of the new role. 
+When someone assumes an IAM role, they abandon all previous permissions that they had under a previous role and assume the permissions of the new role.
 
 Best practice:
 IAM roles are ideal for situations in which access to services or resources needs to be granted temporarily, instead of long-term.
@@ -1542,13 +1542,13 @@ It provides an extra layer of security for your AWS account, such as a random co
     Hierarchical groupings of accounts
     AWS service API actions access control
 You can use AWS Organizations to consolidate and manage multiple AWS accounts within a central location.
-When you create an organization, AWS Organizations automatically creates a root, which is the parent container for all the accounts in your organization. 
+When you create an organization, AWS Organizations automatically creates a root, which is the parent container for all the accounts in your organization.
 You can centrally control permissions for the accounts in your organization by using service control policies (SCPs).
 SCPs enable you to place restrictions on the AWS services, resources, and individual API actions that users and roles in each account can access.
 
 - Organizational units
 In AWS Organizations, you can group accounts into organizational units (OUs) to make it easier to manage accounts with similar business or security requirements.
-When you apply a policy to an OU, all the accounts in the OU automatically inherit the permissions specified in the policy.  
+When you apply a policy to an OU, all the accounts in the OU automatically inherit the permissions specified in the policy.
 By organizing separate accounts into OUs, you can more easily isolate workloads or applications that have specific security requirements.
 For instance, if your company has accounts that can access only the AWS services that meet certain regulatory requirements, you can put these accounts into one OU.
 Then, you can attach a policy to the OU that blocks access to all other AWS services that do not meet the regulatory requirements.
@@ -1647,7 +1647,7 @@ Additionally, you can integrate AWS Shield with AWS WAF by writing custom rules 
 
 
 => AWS Key Management Service (AWS KMS)
-It enables you to perform encryption operations through the use of cryptographic keys. 
+It enables you to perform encryption operations through the use of cryptographic keys.
 A cryptographic key is a random string of digits used for locking (encrypting) and unlocking (decrypting) data.
 You can use AWS KMS to create, manage, and use cryptographic keys. You can also control the use of keys across a wide range of services and in your applications.
 With AWS KMS, you can choose the specific levels of access control that you need for your keys. For example, 
@@ -1805,3 +1805,187 @@ You can assign permissions to users and groups in AWS Identity and Access Manage
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 MODULE 7
+Summarize approaches to monitoring your AWS environment.
+Describe the benefits of Amazon CloudWatch.
+Describe the benefits of AWS CloudTrail.
+Describe the benefits of AWS Trusted Advisor.
+
+=> Amazon CloudWatch
+Amazon CloudWatch is a web service that enables you to monitor and manage various metrics and configure alarm actions based on data from those metrics.
+CloudWatch uses metrics to represent the data points for your resources. AWS services send metrics to CloudWatch.
+CloudWatch then uses these metrics to create graphs automatically that show how performance has changed over time.
+    Access all your metrics from a central location
+    Gain visibility into your applications, infrastructure and services
+    Reduce MTTR (mean time to repair)
+    Improve TCO (total cost of ownership)
+    Drive insights to optimize applications and operational resources
+
+- CloudWatch alarms
+With CloudWatch, you can create alarms that automatically perform actions if the value of your metric has gone above or below a predefined threshold.
+
+- CloudWatch dashboard
+The CloudWatch dashboard feature enables you to access all the metrics for your resources from a single location.
+For example, you can use a CloudWatch dashboard to monitor the CPU utilization of an Amazon EC2 instance, the total number of requests made to an 
+Amazon S3 bucket, and more. You can even customize separate dashboards for different business purposes, applications, or resources.
+
+
+=> AWS CloudTrail
+AWS CloudTrail records API calls for your account. The recorded information includes the identity of the API caller, 
+the time of the API call, the source IP address of the API caller, and more. You can think of CloudTrail as a “trail” of 
+breadcrumbs (or a log of actions) that someone has left behind them.
+Recall that you can use API calls to provision, manage, and configure your AWS resources. With CloudTrail, you can view a complete history of user 
+activity and API calls for your applications and resources. 
+Events are typically updated in CloudTrail within 15 minutes after an API call. 
+You can filter events by specifying the time and date that an API call occurred, the user who requested the action, 
+the type of resource that was involved in the API call, and more.
+
+- CloudTrail Insights
+Within CloudTrail, you can also enable CloudTrail Insights.
+This optional feature allows CloudTrail to automatically detect unusual API activities in your AWS account. 
+For example, CloudTrail Insights might detect that a higher number of Amazon EC2 instances than usual have recently launched in your account.
+You can then review the full event details to determine which actions you need to take next.
+
+
+=> Knowledge check
+
+1 - Which tasks can you perform using AWS CloudTrail? (Select TWO.)
+
+a) Monitor your AWS infrastructure and resources in real time
+
+b) Track user activities and API requests throughout your AWS infrastructure
+
+c) View metrics and graphs to monitor the performance of resources
+
+d) Filter logs to assist with operational analysis and troubleshooting
+
+e) Configure automatic actions and alerts in response to metrics
+
+The correct two response options are:
+
+Track user activities and API requests throughout your AWS infrastructure
+Filter logs to assist with operational analysis and troubleshooting
+The other response options are tasks that you can perform in Amazon CloudWatch.
+
+
+=> AWS Trusted Advisor
+AWS Trusted Advisor is a web service that inspects your AWS environment and provides real-time recommendations in accordance with AWS best practices.
+Trusted Advisor compares its findings to AWS best practices in five categories: cost optimization, performance, security, fault tolerance, and service limits.
+For the checks in each category, Trusted Advisor offers a list of recommended actions and additional resources to learn more about AWS best practices. 
+
+The guidance provided by AWS Trusted Advisor can benefit your company at all stages of deployment.
+For example, you can use AWS Trusted Advisor to assist you while you are creating new workflows and developing new applications.
+Or you can use it while you are making ongoing improvements to existing applications and resources.
+
+    Cost optimization
+    Performance
+    Security
+    Fault tolerance
+    Service limits
+
+- AWS Trusted Advisor dashboard
+When you access the Trusted Advisor dashboard on the AWS Management Console, you can review completed checks for 
+cost optimization, performance, security, fault tolerance, and service limits.
+
+For each category:
+    The green check indicates the number of items for which it detected no problems.
+    The orange triangle represents the number of recommended investigations.
+    The red circle represents the number of recommended actions.
+
+
+=> QUIZ
+
+1 - Which actions can you perform using Amazon CloudWatch? (Select TWO.)
+
+a) Monitor your resources’ utilization and performance
+
+b) Receive real-time guidance for improving your AWS environment
+
+c) Compare your infrastructure to AWS best practices in five categories
+
+d) Access metrics from a single dashboard
+
+e) Automatically detect unusual account activity
+
+The two correct response options are:
+
+Monitor your resources’ utilization and performance
+Access metrics from a single dashboard
+
+
+The other response options are incorrect because:
+
+Receiving real-time recommendations for improving your AWS environment can be performed by AWS Trusted Advisor.
+Comparing your infrastructure to AWS best practices in five categories can be performed by AWS Trusted Advisor.
+Automatically detecting unusual account activity can be performed by AWS CloudTrail.
+
+
+2 - Which service enables you to review the security of your Amazon S3 buckets by checking for open access permissions?
+
+a) Amazon CloudWatch
+
+b) AWS CloudTrail
+
+c) AWS Trusted Advisor
+
+d) Amazon GuardDuty
+
+The correct response option is AWS Trusted Advisor.
+
+AWS Trusted Advisor is a web service that inspects your AWS environment and provides real-time recommendations in accordance with AWS best practices.
+The inspection includes security checks, such as Amazon S3 buckets with open access permissions.
+
+
+The other response options are incorrect because:
+
+Amazon CloudWatch is a web service that enables you to monitor and manage various metrics for the resources that run your applications.
+AWS CloudTrail is a web service that enables you to review details for user activities and API calls that have occurred within your AWS environment.
+Amazon GuardDuty is a service that provides intelligent threat detection for your AWS environment and resources.
+It identifies threats by continuously monitoring the network activity and account behavior within your AWS environment.
+
+
+3 - Which categories are included in the AWS Trusted Advisor dashboard? (Select TWO.)
+
+a) Reliability
+
+b) Performance
+
+c) Scalability
+
+d) Elasticity
+
+e) Fault tolerance
+
+The two correct response options are:
+
+Performance
+Fault tolerance
+
+
+AWS Trusted Advisor continuously inspects your AWS environment and provides best practice recommendations across five categories: 
+cost optimization, performance, security, fault tolerance, and service limits.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MODULE 8
+Describe AWS pricing and support models.
+Describe the AWS Free Tier.
+Describe key benefits of AWS Organizations and consolidated billing.
+Explain the benefits of AWS Budgets.
+Explain the benefits of AWS Cost Explorer.
+Explain the primary benefits of the AWS Pricing Calculator.
+Distinguish between the various AWS Support Plans.
+Describe the benefits of AWS Marketplace.
+
+=> 
+
+
+
+
+
+
+
+
+
+
+
+
