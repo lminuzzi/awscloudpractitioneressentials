@@ -111,7 +111,6 @@ d) You can quickly deploy applications to customers and provide them with low la
 The correct response option is The aggregated cloud usage from a large number of customers results in lower pay-as-you-go prices.
 
 
-
 This answer describes how customers can benefit from massive economies of scale in cloud computing.
 
 The other response options are incorrect because:
@@ -376,7 +375,6 @@ d) Elastic Load Balancing
 The correct response option is Amazon Simple Notification Service (Amazon SNS).
 
 
-
 Amazon SNS is a publish/subscribe service. Using Amazon SNS topics, a publisher publishes messages to subscribers.
 
 The other response options are incorrect because: 
@@ -397,7 +395,6 @@ c) Compute optimized
 d) Storage optimized
 
 The correct response option is Compute optimized.
- 
 
 
 The other response options are incorrect because:
@@ -443,7 +440,6 @@ d) On-Demand Instance
 The correct response option is Spot Instance.
 
 
-
 The other response options are incorrect because:
 
 Reserved Instances require a contract length of either 1 year or 3 years. The workload in this scenario will only be running for 6 months.
@@ -467,7 +463,6 @@ d) Automatically adjusting the number of Amazon EC2 instances to meet demand
 The correct response option is Ensuring that no single Amazon EC2 instance has to carry the full workload on its own.
 
 
-
 Elastic Load Balancing is the AWS service that automatically distributes incoming application traffic across multiple resources, such as Amazon EC2 instances. 
 This helps to ensure that no single resource becomes overutilized.
 The other response options are all examples of Auto Scaling.
@@ -484,7 +479,6 @@ c) Amazon Simple Queue Service (Amazon SQS)
 d) Amazon Elastic Kubernetes Service (Amazon EKS)
 
 The correct response option is Amazon Elastic Kubernetes Service (Amazon EKS).
-
 
 
 Amazon EKS is a fully managed Kubernetes service. Kubernetes is open-source software that enables you to deploy and manage containerized applications at scale.
@@ -633,7 +627,6 @@ d) A service that you can use to run AWS infrastructure within your own on-premi
 The correct response option is A single data center or group of data centers within a Region.
 
 
-
 The other response options are incorrect because:
 
 A Region is a geographical area that contains AWS resources.
@@ -676,7 +669,6 @@ Proximity to your customers
 Two other factors to consider when selecting a Region are pricing and the services that are available in a Region.
 
 
-
 The other response options are incorrect because:
 
 The level of support that you choose is not determined by Region. AWS Support plans are explored later in this course.
@@ -695,7 +687,6 @@ c) A service that enables you to send and receive messages between software comp
 d) A global content delivery service
 
 The correct response option is A global content delivery service.
-
 
 
 Amazon CloudFront is a content delivery service.
@@ -722,7 +713,6 @@ d) Origin
 The correct response option is Edge location.
 
 
-
 The other response options are incorrect because:
 
 A Region is a separate geographical location with multiple locations that are isolated from each other.
@@ -743,7 +733,6 @@ c) Develop AWS applications in supported programming languages.
 d) Extend AWS infrastructure and services to your on-premises data center.
 
 The correct response option is Extend AWS infrastructure and services to your on-premises data center.
-
 
 
 The other response options are incorrect because:
@@ -1043,7 +1032,7 @@ Best for temporary data that is not kept long term
 When stopping or terminating an EC2 instance, data is deleted
 
 - Amazon ESB Volumes
-Best for data thta requires retention
+Best for data that requires retention
 When stopping or terminating an EC2 instance, data remains available
 
 
@@ -2267,7 +2256,6 @@ The AWS Free Tier is a program that consists of three types of offers that allow
 Always free, 12 months free, and Trials.
 
 
-
 3 - Which pricing tool enables you to receive alerts when your service usage exceeds a threshold that you have defined?
 
 a) Billing dashboard in the AWS Management Console
@@ -3234,7 +3222,6 @@ d) Configuring AWS infrastructure devices
 e) Training company employees on how to use AWS services
 
 The two correct response options are:
-
 
 Maintaining virtualization infrastructure
 Configuring AWS infrastructure devices 
